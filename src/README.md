@@ -1,4 +1,4 @@
-   <!-- 1 -->
+  1
    What is JSX?
     JSX stands for JavaScript XML.
     It is a syntax extension for JavaScript, mainly used in React.
@@ -12,7 +12,7 @@ Why is JSX used?
   Allows JavaScript expressions inside markup using { }.
   Produces better error and warning messages, making debugging easier.
 
-  <!-- 2 -->
+//2
 
   Difference Between State and Props
 State
@@ -28,7 +28,7 @@ Props
   Help in making components reusable, since the same component can behave differently with different props.
 
 
-<!-- 3 -->
+//3
    What is useState?
      useState is a React Hook that allows functional components to have their own state variables.
      It helps manage dynamic data inside a component.
@@ -44,7 +44,7 @@ Key Points
   State updates cause re-rendering of the component.
   Helps in building interactive UIs.
 
-  <!-- 4 -->
+ //4
   How can you share state?
     In React, state is local to a component by default. To share it, you need to lift the state up or use other methods.
 
@@ -64,7 +64,7 @@ Key Point
   For small apps → Lifting State Up is usually enough.
   For larger apps → Context or external libraries make state management easier.
 
-  <!-- 5 -->
+//5
 
   How is event handling done?
     React handles events using synthetic events, which are cross-browser wrappers around native events.

@@ -8,9 +8,12 @@ const Tickets = ({ tickets = [], onSelectTicket }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         {tickets && tickets.length > 0 ? (
           tickets.map((ticket) => {
-            const isMedium = ticket.priority === "MEDIUM";
-            const buttonBgClass = isMedium ? "bg-yellow-100 text-yellow-800" : "bg-green-200 text-green-800";
-            const circleClass = isMedium ? "bg-yellow-500 text-white" : "bg-green-500 text-white";
+            const status = (ticket.status || "").toLowerCase();
+
+            // OPEN -> green, anything else -> yellow
+            const isOpen = status === "open";
+            const buttonBgClass = isOpen ? "bg-green-200 text-green-800" : "bg-yellow-100 text-yellow-800";
+            const circleClass = isOpen ? "bg-green-500 text-white" : "bg-yellow-500 text-white";
 
             return (
               <div
@@ -21,11 +24,10 @@ const Tickets = ({ tickets = [], onSelectTicket }) => {
                 <div className="flex justify-between items-center">
                   <h1 className="font-semibold">{ticket.title}</h1>
 
-                 
                   <button
                     className={`flex items-center gap-2 ${buttonBgClass} p-1 px-3 rounded-2xl text-sm font-medium`}
                     aria-label={`Status: ${ticket.status}`}
-                    onClick={(e) => e.stopPropagation()} 
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <span
                       className={`${circleClass} w-5 h-5 flex items-center justify-center rounded-full text-xs font-bold`}
