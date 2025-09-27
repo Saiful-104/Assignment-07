@@ -43,7 +43,7 @@ const Tickets = ({ tickets = [], onSelectTicket }) => {
                 <div className="flex justify-between items-center mt-3 text-sm text-gray-700">
                   <div className="flex gap-4">
                     <p>#{ticket.id}</p>
-                    <span
+                    <span 
                       className={`px-2 py-1 rounded text-xs font-medium ${
                         ticket.priority === "HIGH"
                           ? "bg-red-100 text-red-700"
