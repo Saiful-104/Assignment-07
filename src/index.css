@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;           
+  color: #ffffff;
+  height: 9rem;                
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;                
+  background: var(--card-gradient, linear-gradient(to right, #8B5CF6, #6366F1));
+}
+
+
+.stat-card::before,
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 35%;                   
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;    
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stat-card::before {
+  left: 0;
+}
+
+
+.stat-card::after {
+  right: 0;
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.title {
+  font-size: 1.125rem; 
+  font-weight: 600;
+  margin: 0;
+}
+
+.count {
+  font-size: 2.25rem;  
+  font-weight: 700;
+  margin: 0.25rem 0 0 0;
+}
